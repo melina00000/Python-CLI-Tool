@@ -6,29 +6,3 @@
 
 3. Διαφάνεια
 Η δημοσίευση του κώδικα στο GitHub αυξάνει τη διαφάνεια & την αξιοπιστία του εργαλείου. Οποιοσδήποτε μπορεί να δει πώς λειτουργεί, να ελέγξει τον κώδικα & να προτείνει βελτιώσεις. Παράλληλα, μειώνεται ο κίνδυνος λαθών ή κακής χρήσης, καθώς ο κώδικας είναι ανοικτός & ελέγξιμος. Η διαφάνεια αυτή ενισχύει την εμπιστοσύνη των χρηστών & ακολουθεί τη φιλοσοφία του ανοικτού λογισμικού.
-
-import requests
-
-API_URL = "http://localhost/wordpress/wp-json/wp/v2/posts"
-
-def get_latest_posts():
-    try:
-        response = requests.get(API_URL, params={"per_page": 3})
-        response.raise_for_status()
-        posts = response.json()
-
-        print("\nΤελευταία 3 Άρθρα από το WordPress:\n")
-
-        for post in posts:
-            title = post["title"]["rendered"]
-            link = post["link"]
-            print(f"- {title}")
-            print(f"  Σύνδεσμος: {link}\n")
-
-    except requests.exceptions.RequestException as error:
-        print("Σφάλμα κατά τη σύνδεση με το WordPress API:")
-        print(error)
-
-if __name__ == "__main__":
-    get_latest_posts()
-
