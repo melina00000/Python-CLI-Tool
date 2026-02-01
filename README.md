@@ -9,17 +9,12 @@
 
 ( για macbook )
 
-Δημιουργία εικονικού περιβάλλοντος
-python3 -m venv venv
+Δημιουργία εικονικού περιβάλλοντος: python3 -m venv venv
 
-Ενεργοποίηση εικονικού περιβάλλοντος
-source venv/bin/activate
+Ενεργοποίηση εικονικού περιβάλλοντος: source venv/bin/activate
 
-Εγκατάσταση βιβλιοθήκης
-pip install requests
+Εγκατάσταση βιβλιοθήκης: pip install requests
 
-Δημιουργία αρχείου εξαρτήσεων
-pip freeze > requirements.txt
+Δημιουργία αρχείου εξαρτήσεων: pip freeze > requirements.txt
 
-Απενεργοποίηση εικονικού περιβάλλοντος
-deactivate
+Απενεργοποίηση εικονικού περιβάλλοντος: deactivate
